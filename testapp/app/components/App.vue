@@ -7,7 +7,7 @@
 	              therefore it can't be demoed on Playground. You will have to download this project
 	              and build it locally to try it on Android -->
             <!-- <CardView v-if="showCardView" v-bind:key="item.heading" v-for="item in items" class="card" elevation="40" radius="10" ios:shadowRadius="3"> -->
-							<CardView v-bind:key="item.heading" v-for="item in items" class="card" elevation="40" radius="10" ios:shadowRadius="3">
+				<CardView v-bind:key="item.heading" v-for="item in items" class="card" elevation="40" radius="10" ios:shadowRadius="3">
                 <StackLayout class="card-layout">
                     <Label class="h2" :text="item.heading" />
                     <Label class="body" textWrap="true" :text="item.content" />
@@ -72,19 +72,8 @@ export default {
 </script>
 
 <style scoped>
-/*
-In NativeScript, the app.css file is where you place CSS rules that
-you would like to apply to your entire application. Check out
-http://docs.nativescript.org/ui/styling for a full list of the CSS
-selectors and properties you can use to style UI components.
-
-/*
-In many cases you may want to use the NativeScript core theme instead
-of writing your own CSS rules. For a full list of class names in the theme
-refer to http://docs.nativescript.org/ui/theme.
-The imported CSS rules must precede all other types of rules.
-*/
-@import 'nativescript-theme-core/css/core.light.css';
+@import '~@nativescript/theme/css/core.css';
+@import '~@nativescript/theme/css/default.css';
 
 .card {
     background-color: #fff;
