@@ -2,10 +2,15 @@
     <Page actionBarHidden="true">
         <FlexboxLayout class="page">
             <StackLayout class="form">
-                <Image class="logo" src="~/images/logo.png"></Image>
-                <Label class="header" text="APP NAME"></Label>
+                <!-- <Image class="logo" src="~/images/logo.png"></Image> -->
+                <v-template>
+                    <Logo class="logo" :logo="logo"></Logo>
+                </v-template>
+                <Label class="header" text="안녕하세요 타시오 입니다"></Label>
 
+                <!-- GridLayout: 자식 요소를 테이블과 같은 방식으로 정렬 할 수있는 레이아웃 컨테이너 -->
                 <GridLayout rows="auto, auto, auto">
+                    <!-- StackLayout: 하위 요소를 세로 (기본값) 또는 가로로 쌓을 수있는 레이아웃 컨테이너 -->
                     <StackLayout row="0" class="input-field">
                         <TextField class="input" hint="Email" :isEnabled="!processing"
                             keyboardType="email" autocorrect="false"
@@ -29,11 +34,12 @@
                         <StackLayout class="hr-light"></StackLayout>
                     </StackLayout>
 
+                    <!-- ActivityIndicator: 백그라운드에서 실행중인 오퍼레이션을 사용자에게 알리는 진행 표시기를 표시하는 UI 구성 요소 -->
                     <ActivityIndicator rowSpan="3" :busy="processing"></ActivityIndicator>
                 </GridLayout>
 
-                <Button :text="isLoggingIn ? 'Log In' : 'Sign Up'" :isEnabled="!processing"
-                    @tap="submit" class="btn btn-primary m-t-20"></Button>
+                <Button :text="isLoggingIn ? '로그인' : 'Sign Up'" :isEnabled="!processing"
+                    @tap="submit" class="btn btn-primary m-t-20 loginBtn"></Button>
                 <Label *v-show="isLoggingIn" text="Forgot your password?"
                     class="login-label" @tap="forgotPassword()"></Label>
             </StackLayout>
@@ -50,8 +56,13 @@
 
 <script>
     import Home from "./Home";
+    import Logo from "./logo.vue";
 
     export default {
+        components: {
+            Logo
+        },
+
         data() {
             return {
                 isLoggingIn: true,
@@ -193,7 +204,11 @@
         font-weight: 600;
         margin-bottom: 70;
         text-align: center;
-        color: #D51A1A;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: -1px;
+        color: #555555;
     }
 
     .input-field {
@@ -226,5 +241,11 @@
 
     .bold {
         color: #000000;
+    }
+
+    .loginBtn {
+        background: #E61773;
+        border-radius: 3px;
+        color: #FFF;
     }
 </style>

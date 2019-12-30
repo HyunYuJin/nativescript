@@ -1,7 +1,8 @@
 {
-	"time": "",
-	"nativePlatformStatus": "1",
+	"time": "Mon Dec 30 2019 10:38:35 GMT+0900 (GMT+09:00)",
+	"nativePlatformStatus": "3",
+	"release": false,
 	"changesRequireBuild": true,
 	"projectFileHash": "930e17895c2e1d5df0e2e59907f71ffd18f677390ea026dfbcf8d65260f43da4",
-	"changesRequireBuildTime": null
+	"changesRequireBuildTime": "Mon Dec 30 2019 10:38:35 GMT+0900 (GMT+09:00)"
 }
