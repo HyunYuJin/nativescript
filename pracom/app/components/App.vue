@@ -14,7 +14,12 @@ export default {
   methods: {
     goToDetailPage() {
       this.$navigateTo(Detail);
-    }
+    },
+
+    // Detail Page를 Modal Page로 보여주고 싶은 경우
+    // showDetailPageModally() {
+    //   this.$showModal(Detail);
+    // }
   }
 }
 </script>
