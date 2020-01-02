@@ -1,22 +1,20 @@
 <template>
   <Page>
     <ActionBar title="Master" />
-    <StackLayout>
-      <Button text="To Details directly" @tap="goToDetailPage" class="nextBtn" />
-      <Label text="hello world" @tap="goToDetailPage2" class="helloworld" />
-      <AbsoluteLayout backgroundColor="#3c495e">
-        <Label text="10,10" left="10" top="10" width="100" height="100" backgroundColor="#43b883"/>
-        <Label text="120,10" left="120" top="10" width="100" height="100" backgroundColor="#43b883"/>
-        <Label text="10,120" left="10" top="120" width="100" height="100" backgroundColor="#43b883"/>
-        <Label text="120,120" left="120" top="120" width="100" height="100" backgroundColor="#43b883"/>
-      </AbsoluteLayout>
-    </StackLayout>
+    <FlexboxLayout flexDirection="column" backgroundColor="#FFF">
+      <Label text="Elements Layouts" @tap="goToDetailPage" class="helloworld" />
+      <Button text="DockLayout" @tap="goToDock" class="nextBtn" />
+      <Button text="AbsoluteLayout" @tap="goToAbsolute" class="nextBtn" />
+      <Button text="FlexBoxLayout" @tap="goToFlex" class="nextBtn" />
+    </FlexboxLayout>
   </Page>
 </template>
 
 <script >
 import Detail from './Detail.vue';
-import Detail2 from './Detail2.vue';
+import DockLayout from './DockLayout.vue';
+import AbsoluteLayout from './AbsoluteLayout.vue';
+import FlexBoxLayout from './FlexBoxLayout.vue';
 
 export default {
   methods: {
@@ -24,9 +22,17 @@ export default {
       this.$navigateTo(Detail);
     },
 
-    goToDetailPage2() {
-      this.$navigateTo(Detail2);
+    goToDock() {
+      this.$navigateTo(DockLayout);
     },
+
+    goToAbsolute() {
+      this.$navigateTo(AbsoluteLayout);
+    },
+
+    goToFlex() {
+      this.$navigateTo(FlexBoxLayout);
+    }
 
     // Detail Page를 Modal Page로 보여주고 싶은 경우
     // showDetailPageModally() {
@@ -59,6 +65,9 @@ export default {
     }
 
     .helloworld {
+      height: 100px;
+      font-size: 30rem;
+      font-weight: bold;
       background: #333333;
       text-align: center;
       color: #FFF;
