@@ -7,6 +7,7 @@
       <Button text="AbsoluteLayout" @tap="goToAbsolute" class="nextBtn" />
       <Button text="FlexBoxLayout" @tap="goToFlex" class="nextBtn" />
       <Button text="GridLayout" @tap="goToGrid" class="nextBtn" />
+      <Button text="StackLayout" @tap="goToStack" class="nextBtn" />
     </FlexboxLayout>
   </Page>
 </template>
@@ -17,6 +18,7 @@ import DockLayout from './DockLayout.vue';
 import AbsoluteLayout from './AbsoluteLayout.vue';
 import FlexBoxLayout from './FlexBoxLayout.vue';
 import GridLayout from './GridLayout.vue';
+import StackLayout from './StackLayout.vue';
 
 export default {
   methods: {
@@ -38,6 +40,10 @@ export default {
 
     goToGrid() {
       this.$navigateTo(GridLayout);
+    },
+
+    goToStack() {
+      this.$navigateTo(StackLayout);
     }
 
     // Detail Page를 Modal Page로 보여주고 싶은 경우
